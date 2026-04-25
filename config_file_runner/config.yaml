@@ -1,0 +1,18 @@
+# Instead of hardcoding your training settings inside Python scripts, you write them in a YAML file. Then your script reads that file. This means you can change your entire training config — backbone, learning rate, augmentations — without touching any code. Just edit the YAML file and run the script again. This is exactly how your platform will work — every configuration combo will be a YAML file that gets passed to a training script.
+
+
+project_name : "image_calssification_v1"
+problem_type : "calssification"
+model:
+  backbone : "restnet50"
+  pretrained : true
+  activation : "relu"
+augmentation :
+  horizontal_flip : true
+  mixup : false
+  cutout : true
+training:
+  optimizer : "adam"
+  learning_rate : 0.001
+  epochs : 10
+  batch_size : 32
