@@ -79,3 +79,12 @@
 -- ORDER BY val_accuracy DESC, val_loss ASC
 -- LIMIT 5;
 
+
+-- ALTER TABLE experiment
+-- ADD COLUMN iou FLOAT,
+-- ADD COLUMN f1_score FLOAT,
+-- ADD COLUMN mean_avg_precision FLOAT,
+-- ADD COLUMN auc_roc FLOAT,
+-- ADD COLUMN primary_metric VARCHAR(50) NOT NULL DEFAULT 'val_accuracy';
+
+-- SELECT * FROM experiment
