@@ -15,6 +15,11 @@ class ExperimentsBase (SQLModel):
     val_accuracy : float
     val_loss : float
     epochs : int
+    iou : float | None = Field(default=None)
+    f1_score : float | None = Field(default=None)
+    mean_avg_precision : float | None = Field(default=None)
+    auc_roc : float | None = Field(default=None)
+    primary_metric : str = Field(default="val_accuracy")
     time_stamp : datetime = Field(default_factory=datetime.now)
 
 class Experiment (ExperimentsBase, table=True):
