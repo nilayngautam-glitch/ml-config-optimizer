@@ -79,7 +79,6 @@
 -- ORDER BY val_accuracy DESC, val_loss ASC
 -- LIMIT 5;
 
-
 -- ALTER TABLE experiment
 -- ADD COLUMN iou FLOAT,
 -- ADD COLUMN f1_score FLOAT,
@@ -88,3 +87,17 @@
 -- ADD COLUMN primary_metric VARCHAR(50) NOT NULL DEFAULT 'val_accuracy';
 
 -- SELECT * FROM experiment
+
+
+-- ALTER TABLE experiment
+-- ADD COLUMN dataset_name VARCHAR(50) NOT NULL DEFAULT 'unknown',
+-- ADD COLUMN seed INT,
+-- ADD COLUMN freeze_strategy VARCHAR(100);
+
+-- ALTER TABLE experiment
+-- ADD COLUMN dropout VARCHAR(50),
+-- ADD COLUMN regularization VARCHAR(50),
+-- ADD COLUMN batch_normalization BOOLEAN;
+
+--ALTER TABLE experiment
+--ADD COLUMN loss_function VARCHAR(50)
