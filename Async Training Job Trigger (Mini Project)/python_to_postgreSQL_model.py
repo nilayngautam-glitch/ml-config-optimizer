@@ -5,13 +5,20 @@ class ExperimentsBase (SQLModel):
     project_name : str
     problem_type : str
     dataset_size  : int 
-    backbone : str
-    activation : str
+    dataset_name : str
+    seed : int | None = Field(default=None)
+    backbone : str  | None = Field(default=None)
+    activation : str 
     optimizer : str | None = Field(default=None)
+    batch_normalization : bool | None = Field(default=None)
+    regularization : str | None = Field(default=None)
+    dropout : str | None = Field(default=None)
     batch_size : int | None = Field(default=None)
     learning_rate : float | None = Field(default=None)
     pretrained_weights : str | None = Field(default=None)
     augmentation : str | None = Field(default=None)
+    freeze_strategy : str | None = Field(default=None)
+    loss_function : str | None = Field(default=None)
     val_accuracy : float
     val_loss : float
     epochs : int
